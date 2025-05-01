@@ -1,0 +1,118 @@
+.widget-container, #text {
+    position: relative;
+    width: 350px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+.bg{
+    width: 350px; 
+    height: 500px; 
+}
+
+.apple{
+    position: absolute;
+    top: 70px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+      transform: translate(-50%, 0);
+    }
+    50% {
+      transform: translate(-50%, -10px); 
+    }
+  }
+  
+@font-face {
+    font-family: DorkyCircle;
+    src: url(Dorky\ Circle.otf);
+}
+#countdown {
+    position: absolute;
+    top: 190px; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    font-family: DorkyCircle, 'Comic Sans MS', cursive, sans-serif;
+    color: #92cd4d;
+  }
+
+#text {
+    position: absolute;
+    top: 280px; 
+    font-size: 20px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #92cd4d;
+}
+
+#btn-10mins {
+    position: absolute;
+    cursor: pointer;
+    bottom: 110px;
+    left: 40px;
+    width: 130px; 
+    transition: transform 0.1s ease;
+}
+
+#btn-15mins{
+    position: absolute;
+    cursor: pointer;
+    bottom: 110px;
+    left: 180px;
+    width: 130px; 
+    transition: transform 0.1s ease;
+}
+
+#btn-25mins {
+    position: absolute;
+    cursor: pointer;
+    bottom: 45px;
+    left: 40px;
+    width: 130px; 
+    transition: transform 0.1s ease;
+}
+
+#icon-pause {
+    position: absolute;
+    cursor: pointer;
+    bottom: 40px;
+    left: 255px;
+    width: 55px; 
+    transition: transform 0.1s ease;
+}
+
+#icon-restart{
+    position: absolute;
+    cursor: pointer;
+    bottom: 40px;
+    left: 180px;
+    width: 55px; 
+    transition: transform 0.1s ease;
+}
+
+#btn-10mins:hover{
+    transform: scale(1.05); 
+}
+
+#btn-15mins:hover{
+    transform: scale(1.05); 
+}
+
+#btn-25mins:hover{
+    transform: scale(1.05); 
+}
+
+#icon-pause:hover{
+    transform: scale(1.05); 
+}
+
+#icon-restart:hover{
+    transform: scale(1.05); 
+}
