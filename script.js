@@ -1,7 +1,7 @@
 let startingMinute = 0;
 let isPaused = false;
 let time = startingMinute * 60;
-let refreshIntervalId = false;  
+let refreshIntervalId = null;  
 
 const pauseBtn = document.getElementById('icon-pause');
 const countdownEl = document.getElementById('countdown');
@@ -33,6 +33,10 @@ function updateCountdown() {
 
 function startTimer(minutes){
     clearInterval(refreshIntervalId);
+    refreshIntervalId = null;
+    isPaused = false;
+    pauseBtn.src = 'assets/icon-pause.png';
+
     time = minutes * 60;
     updateCountdown();
     refreshIntervalId = setInterval(updateCountdown, 1000);
@@ -63,12 +67,15 @@ resetBtn.addEventListener('click', () =>{
 pauseBtn.addEventListener('click', () => {
     if (isPaused) {
         // Resume timer
-        refreshIntervalId = setInterval(updateCountdown, 1000);
+        if (refreshIntervalId === null){
+            refreshIntervalId = setInterval(updateCountdown, 1000);
+        } 
         isPaused = false;
         pauseBtn.src = 'assets/icon-pause.png';
     } else {
         // Pause timer
         clearInterval(refreshIntervalId);
+        refreshIntervalId = null;
         isPaused = true;
         pauseBtn.src = 'assets/icon-play.png';
     }
