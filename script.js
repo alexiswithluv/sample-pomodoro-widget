@@ -15,6 +15,7 @@ function updateCountdown() {
             refreshIntervalId = false;
             countdownEl.innerHTML = "00:00";
             text.textContent = 'Time is up! Take a break.';
+            playAlarm();
             return;
         }
 
@@ -80,3 +81,8 @@ pauseBtn.addEventListener('click', () => {
         pauseBtn.src = 'assets/icon-play.png';
     }
 });
+
+function playAlarm(){
+    const sound = document.getElementById("alarm-sound");
+    sound.play();
+}
