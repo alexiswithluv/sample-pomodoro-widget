@@ -15,10 +15,12 @@ function updateCountdown() {
             refreshIntervalId = false;
             countdownEl.innerHTML = "00:00";
             text.textContent = 'Time is up! Take a break.';
+            changeImage();
             playAlarm();
             return;
         }
 
+        document.getElementById('half apple').src = 'assets/half apple.png'
         text.textContent = 'you got this!';
         let minutes = Math.floor(time / 60);
         let seconds = time % 60;
@@ -31,6 +33,9 @@ function updateCountdown() {
     }
 }
 
+function changeImage(){
+    document.getElementById('half apple').src = 'assets/eaten apple.png';
+}
 
 function startTimer(minutes){
     clearInterval(refreshIntervalId);
